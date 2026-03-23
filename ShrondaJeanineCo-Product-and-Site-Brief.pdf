@@ -1,0 +1,412 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Length 1827 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm
+15 TL
+(SHRONDA JEANINE & COMPANY PRODUCT AND SITE BRIEF) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Brand Summary) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Shronda Jeanine & Company is a healing-centered brand focused on truth, emotional clarity,) Tj
+T*
+(spiritual maturity, and breaking harmful family and generational patterns. The site supports) Tj
+T*
+(booking, membership sales, community growth, and future content expansion.) Tj
+T*
+() Tj
+T*
+(Core brand themes:) Tj
+T*
+(? Healing) Tj
+T*
+(? Truth) Tj
+T*
+(? Identity reclamation) Tj
+T*
+(? Emotional growth) Tj
+T*
+(? Generational change) Tj
+T*
+(? Community) Tj
+T*
+() Tj
+T*
+(Primary contact details:) Tj
+T*
+(? Website: `https://shrondajeanineco.com`) Tj
+T*
+(? Email: `shrondajeanine@shrondajeanineco.com`) Tj
+T*
+(? Phone: `\(602\) 759-0158`) Tj
+T*
+(? YouTube channel: `https://www.youtube.com/@OnPurposeWithPurpose9`) Tj
+T*
+(? Instagram: `https://instagram.com/shrondajeanine`) Tj
+T*
+() Tj
+T*
+(Website Summary) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Current codebase structure:) Tj
+T*
+(? `public/index.html`: main homepage) Tj
+T*
+(? `public/linkinbio.html`: simplified link-in-bio page) Tj
+T*
+(? `public/success.html`: post-checkout thank-you page) Tj
+T*
+(? `public/css/style.css`: site styling) Tj
+T*
+(? `public/js/main.js`: frontend behavior for navigation, forms, checkout, and chat) Tj
+T*
+(? `server.js`: Express backend for static site serving, booking form submission, email) Tj
+T*
+(signup, chat, checkout, and Stripe webhook handling) Tj
+T*
+() Tj
+T*
+(Site features:) Tj
+T*
+(? Hero-led homepage with clear call to action) Tj
+T*
+(? Consultation booking form) Tj
+T*
+(? Email community signup) Tj
+T*
+(? Stripe checkout for three membership tiers) Tj
+T*
+(? Optional AI chat support widget) Tj
+T*
+(? Link-in-bio page for social traffic) Tj
+T*
+(? Thank-you page after successful payment) Tj
+ET
+endstream
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 2 0 R >>
+endobj
+4 0 obj
+<< /Length 1451 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm
+15 TL
+() Tj
+T*
+(Deployment notes:) Tj
+T*
+(? Hosting target: Railway) Tj
+T*
+(? Repository: `https://github.com/Shrondaj/shrondajeanineco-final`) Tj
+T*
+(? Runtime: Node.js / Express) Tj
+T*
+(? Custom domain target: `shrondajeanineco.com`) Tj
+T*
+() Tj
+T*
+(Required environment variables:) Tj
+T*
+(? `SITE_URL`) Tj
+T*
+(? `EMAIL_USER`) Tj
+T*
+(? `EMAIL_APP_PASS`) Tj
+T*
+(? `EMAIL_HOST`) Tj
+T*
+(? `EMAIL_PORT`) Tj
+T*
+(? `EMAIL_SECURE`) Tj
+T*
+(? `STRIPE_SECRET_KEY`) Tj
+T*
+(? `STRIPE_WEBHOOK_SECRET`) Tj
+T*
+(? `STRIPE_PRICE_INTENTIONAL_SOUL`) Tj
+T*
+(? `STRIPE_PRICE_PARTNERS_WITH_PURPOSE`) Tj
+T*
+(? `STRIPE_PRICE_ARCHITECT_OF_ABUNDANCE`) Tj
+T*
+(? Optional: `HF_API_KEY`) Tj
+T*
+() Tj
+T*
+(IONOS SMTP settings:) Tj
+T*
+(? `EMAIL_HOST=smtp.ionos.com`) Tj
+T*
+(? `EMAIL_PORT=587`) Tj
+T*
+(? `EMAIL_SECURE=false`) Tj
+T*
+() Tj
+T*
+(Stripe membership price IDs to configure:) Tj
+T*
+(? `STRIPE_PRICE_INTENTIONAL_SOUL=price_...`) Tj
+T*
+(? `STRIPE_PRICE_PARTNERS_WITH_PURPOSE=price_...`) Tj
+T*
+(? `STRIPE_PRICE_ARCHITECT_OF_ABUNDANCE=price_...`) Tj
+T*
+() Tj
+T*
+(Stripe webhook destination:) Tj
+T*
+(? `https://shrondajeanineco.com/api/stripe-webhook`) Tj
+T*
+() Tj
+T*
+(Membership 1: Intentional Soul) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Price:) Tj
+T*
+(? `$25/month`) Tj
+T*
+() Tj
+T*
+(Short description:) Tj
+T*
+() Tj
+T*
+(Foundational membership support for people building wholeness, consistency, and deeper) Tj
+T*
+(connection to the community.) Tj
+T*
+() Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 4 0 R >>
+endobj
+6 0 obj
+<< /Length 1740 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm
+15 TL
+(Stripe/product description:) Tj
+T*
+() Tj
+T*
+(A foundational membership for people who want a steady connection to the work and community.) Tj
+T*
+(Includes exclusive posts, updates, encouragement content, and early-access communication.) Tj
+T*
+() Tj
+T*
+(Website marketing description:) Tj
+T*
+() Tj
+T*
+(Intentional Soul is the entry-tier membership for people who want steady connection,) Tj
+T*
+(support, and encouragement while staying close to the community. It is built for those who) Tj
+T*
+(value healing-centered content, thoughtful updates, and an accessible way to support the) Tj
+T*
+(work each month.) Tj
+T*
+() Tj
+T*
+(Subtitle:) Tj
+T*
+() Tj
+T*
+(Build the foundation of wholeness.) Tj
+T*
+() Tj
+T*
+(Membership 2: Partners With Purpose) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(Price:) Tj
+T*
+(? `$75/month`) Tj
+T*
+() Tj
+T*
+(Short description:) Tj
+T*
+() Tj
+T*
+(An active support tier for members who want deeper engagement, expanded access, and a) Tj
+T*
+(stronger role in the community.) Tj
+T*
+() Tj
+T*
+(Stripe/product description:) Tj
+T*
+() Tj
+T*
+(An active membership tier for people who want more access to teachings, behind-the-scenes) Tj
+T*
+(content, workshops, and community-centered growth opportunities.) Tj
+T*
+() Tj
+T*
+(Website marketing description:) Tj
+T*
+() Tj
+T*
+(Partners With Purpose is for members who want to move from passive support into deeper) Tj
+T*
+(participation. This tier offers expanded access, more engagement, and a stronger connection) Tj
+T*
+(to the work for people who want to grow with the community in a more active way.) Tj
+T*
+() Tj
+T*
+(Subtitle:) Tj
+T*
+() Tj
+T*
+(Support the work with deeper engagement.) Tj
+T*
+() Tj
+T*
+(Membership 3: Architect Of Abundance) Tj
+T*
+() Tj
+T*
+() Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 6 0 R >>
+endobj
+8 0 obj
+<< /Length 1350 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 54 738 Tm
+15 TL
+(Price:) Tj
+T*
+(? `$150/month`) Tj
+T*
+() Tj
+T*
+(Short description:) Tj
+T*
+() Tj
+T*
+(A premium membership tier for those investing more deeply in the mission and future of the) Tj
+T*
+(community.) Tj
+T*
+() Tj
+T*
+(Stripe/product description:) Tj
+T*
+() Tj
+T*
+(A premium membership for those who want expanded access, deeper participation, priority) Tj
+T*
+(opportunities, and a stronger role in sustaining the vision.) Tj
+T*
+() Tj
+T*
+(Website marketing description:) Tj
+T*
+() Tj
+T*
+(Architect Of Abundance is the highest membership tier for supporters who want to invest more) Tj
+T*
+(deeply in the future of the work. It is designed for those who value direct connection,) Tj
+T*
+(expanded support, and a meaningful role in helping shape long-term growth.) Tj
+T*
+() Tj
+T*
+(Subtitle:) Tj
+T*
+() Tj
+T*
+(Invest deeply in the vision and future.) Tj
+T*
+() Tj
+T*
+(Recommended Next Steps) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(1. Add all production environment variables in Railway.) Tj
+T*
+(2. Configure the Stripe webhook using the live deployment URL.) Tj
+T*
+(3. Test booking form submission with IONOS SMTP credentials.) Tj
+T*
+(4. Test Stripe checkout in sandbox mode first.) Tj
+T*
+(5. Replace sandbox Stripe secrets and price IDs with live Stripe values before launch.) Tj
+T*
+(6. Connect the custom domain DNS records to Railway.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R >> >> /Contents 8 0 R >>
+endobj
+10 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R] /Count 4 >>
+endobj
+11 0 obj
+<< /Type /Catalog /Pages 10 0 R >>
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000001964 00000 n 
+0000002090 00000 n 
+0000003593 00000 n 
+0000003719 00000 n 
+0000005511 00000 n 
+0000005637 00000 n 
+0000007039 00000 n 
+0000007165 00000 n 
+0000007241 00000 n 
+trailer
+<< /Size 12 /Root 11 0 R >>
+startxref
+7292
+%%EOF

@@ -10,9 +10,15 @@ const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
 const stripe = process.env.STRIPE_SECRET_KEY ? new Stripe(process.env.STRIPE_SECRET_KEY) : null;
-const mailer = process.env.EMAIL_USER && process.env.EMAIL_APP_PASS
+const emailHost = process.env.EMAIL_HOST;
+const emailPort = Number(process.env.EMAIL_PORT || 587);
+const emailSecure = String(process.env.EMAIL_SECURE || 'false').toLowerCase() === 'true';
+
+const mailer = process.env.EMAIL_USER && process.env.EMAIL_APP_PASS && emailHost
   ? nodemailer.createTransport({
-      service: 'gmail',
+      host: emailHost,
+      port: emailPort,
+      secure: emailSecure,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_APP_PASS
@@ -21,9 +27,15 @@ const mailer = process.env.EMAIL_USER && process.env.EMAIL_APP_PASS
   : null;
 
 const PRODUCT_PRICE_MAP = {
-  healing_story: process.env.STRIPE_PRICE_HEALING_STORY,
-  spiritual_motherhood: process.env.STRIPE_PRICE_SPIRITUAL_MOTHERHOOD,
-  breaking_cycles: process.env.STRIPE_PRICE_BREAKING_CYCLES
+  intentional_soul: process.env.STRIPE_PRICE_INTENTIONAL_SOUL,
+  partners_with_purpose: process.env.STRIPE_PRICE_PARTNERS_WITH_PURPOSE,
+  architect_of_abundance: process.env.STRIPE_PRICE_ARCHITECT_OF_ABUNDANCE
+};
+
+const PRODUCT_LABEL_MAP = {
+  intentional_soul: 'Intentional Soul',
+  partners_with_purpose: 'Partners With Purpose',
+  architect_of_abundance: 'Architect Of Abundance'
 };
 
 function escapeHtml(value = '') {
@@ -37,6 +49,38 @@ function escapeHtml(value = '') {
 
 function isValidEmail(value = '') {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value).trim());
+}
+
+async function sendDiscordNotification(title, fields) {
+  if (!process.env.DISCORD_WEBHOOK_URL) return;
+
+  const embedFields = fields
+    .filter((field) => field && field.value)
+    .map((field) => ({
+      name: String(field.name).slice(0, 256),
+      value: String(field.value).slice(0, 1024),
+      inline: Boolean(field.inline)
+    }));
+
+  try {
+    await fetch(process.env.DISCORD_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: 'Shronda Jeanine & Company',
+        embeds: [
+          {
+            title,
+            color: 15837319,
+            fields: embedFields,
+            timestamp: new Date().toISOString()
+          }
+        ]
+      })
+    });
+  } catch (error) {
+    console.error('Discord notification error:', error);
+  }
 }
 
 app.post('/api/stripe-webhook', express.raw({ type: 'application/json' }), (req, res) => {
@@ -56,6 +100,12 @@ app.post('/api/stripe-webhook', express.raw({ type: 'application/json' }), (req,
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
     console.log('Payment completed for:', session.customer_email || 'unknown customer');
+    sendDiscordNotification('New payment completed', [
+      { name: 'Customer email', value: session.customer_email || 'Not provided' },
+      { name: 'Amount', value: session.amount_total ? `$${(session.amount_total / 100).toFixed(2)}` : 'Unknown', inline: true },
+      { name: 'Product', value: session.metadata?.productLabel || session.metadata?.productKey || 'Unknown', inline: true },
+      { name: 'Session ID', value: session.id || 'Unknown' }
+    ]);
   }
 
   return res.json({ received: true });
@@ -123,7 +173,7 @@ app.post('/api/booking', async (req, res) => {
 
   try {
     await mailer.sendMail({
-      from: `"Shronda Jeanine Co." <${process.env.EMAIL_USER}>`,
+      from: `"Shronda Jeanine & Company" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       replyTo: email,
       subject: `Consultation request: ${topic}`,
@@ -142,7 +192,7 @@ app.post('/api/booking', async (req, res) => {
     });
 
     await mailer.sendMail({
-      from: `"Shronda Jeanine Co." <${process.env.EMAIL_USER}>`,
+      from: `"Shronda Jeanine & Company" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: 'Your consultation request was received',
       html: `
@@ -153,6 +203,15 @@ app.post('/api/booking', async (req, res) => {
         </div>
       `
     });
+
+    await sendDiscordNotification('New consultation request', [
+      { name: 'Name', value: `${firstName} ${lastName}` },
+      { name: 'Email', value: email },
+      { name: 'Phone', value: phone || 'Not provided', inline: true },
+      { name: 'Topic', value: topic, inline: true },
+      { name: 'Preferred contact', value: contact, inline: true },
+      { name: 'Message', value: message || 'No message provided.' }
+    ]);
 
     return res.json({ success: true });
   } catch (error) {
@@ -173,11 +232,15 @@ app.post('/api/subscribe', async (req, res) => {
 
   try {
     await mailer.sendMail({
-      from: `"Shronda Jeanine Co." <${process.env.EMAIL_USER}>`,
+      from: `"Shronda Jeanine & Company" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       subject: `New community signup: ${email}`,
       text: `New community signup: ${email}`
     });
+
+    await sendDiscordNotification('New community signup', [
+      { name: 'Email', value: email }
+    ]);
 
     return res.json({ success: true });
   } catch (error) {
@@ -200,11 +263,16 @@ app.post('/api/checkout', async (req, res) => {
 
   try {
     const siteUrl = process.env.SITE_URL || `http://localhost:${PORT}`;
+    const productLabel = PRODUCT_LABEL_MAP[productKey] || productKey;
     const session = await stripe.checkout.sessions.create({
-      mode: 'payment',
+      mode: 'subscription',
       line_items: [{ price: priceId, quantity: 1 }],
       success_url: `${siteUrl}/success.html?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${siteUrl}/#work-with-me`
+      cancel_url: `${siteUrl}/#work-with-me`,
+      metadata: {
+        productKey,
+        productLabel
+      }
     });
 
     return res.json({ url: session.url });

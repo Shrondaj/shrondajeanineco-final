@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shronda Jeanine & Company | Membership Options</title>
+  <meta name="description" content="Explore membership options for website, YouTube, Buy Me a Coffee, and TikTok support tiers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#130c1a; --panel:rgba(34,20,42,.86); --line:rgba(255,237,215,.12); --text:#faefe4; --muted:#d4c1b4; --accent:#f2a86f; --accent-strong:#d86f4a; --dark:#1c1217; --shadow:0 30px 80px rgba(0,0,0,.28); }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:"Manrope",sans-serif; color:var(--text); background:radial-gradient(circle at top left, rgba(242,168,111,.16), transparent 28%), linear-gradient(180deg, #130c1a 0%, #17111f 100%); min-height:100vh; }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; }
+    .shell { width:min(1180px, calc(100% - 32px)); margin:0 auto; }
+    .nav { padding:22px 0 10px; }
+    .nav a { display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.04); color:var(--muted); }
+    .hero { padding:38px 0 24px; text-align:center; }
+    .eyebrow { margin:0 0 14px; color:var(--accent); text-transform:uppercase; letter-spacing:.24em; font-size:.75rem; }
+    h1,h2,h3 { margin:0; font-family:"Instrument Serif",serif; font-weight:400; }
+    h1 { font-size:clamp(2.8rem, 6vw, 4.6rem); line-height:.95; margin-bottom:14px; }
+    .hero p { margin:0 auto; max-width:760px; color:var(--muted); line-height:1.8; }
+    .tabs { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:30px 0; }
+    .tab { padding:10px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:transparent; color:rgba(255,255,255,.6); cursor:pointer; }
+    .tab.is-active { background:linear-gradient(135deg, var(--accent), var(--accent-strong)); color:var(--dark); border-color:transparent; font-weight:700; }
+    .cards-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:22px; padding-bottom:26px; }
+    .card { position:relative; padding:30px 26px; border-radius:24px; border:1px solid rgba(255,237,215,.12); box-shadow:var(--shadow); transition:transform .18s ease; }
+    .card:hover { transform:translateY(-4px); }
+    .card.tier-1 { background:linear-gradient(180deg, rgba(56,35,28,.92), rgba(34,20,42,.92)); }
+    .card.tier-2 { background:linear-gradient(180deg, rgba(42,47,93,.96), rgba(34,20,42,.92)); }
+    .card.tier-3 { background:linear-gradient(180deg, rgba(92,56,25,.96), rgba(34,20,42,.92)); }
+    .card__popular { position:absolute; top:-12px; left:50%; transform:translateX(-50%); padding:5px 12px; border-radius:999px; background:var(--accent); color:var(--dark); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; }
+    .card__platform,.card__badge { color:var(--accent); text-transform:uppercase; letter-spacing:.14em; font-size:.74rem; }
+    .card__platform { position:absolute; top:20px; right:20px; color:rgba(255,255,255,.35); }
+    .card__badge { margin-bottom:12px; }
+    .card__name { font-size:2rem; line-height:1; margin-bottom:6px; }
+    .card__tagline { margin:0 0 22px; color:rgba(255,255,255,.58); font-style:italic; }
+    .card__price { display:flex; align-items:baseline; gap:6px; margin-bottom:22px; }
+    .card__amount { font-family:"Instrument Serif",serif; font-size:3rem; color:var(--accent); line-height:1; }
+    .card__period { color:rgba(255,255,255,.48); }
+    .card__divider { height:1px; background:rgba(255,255,255,.1); margin-bottom:18px; }
+    .card__perks { list-style:none; margin:0 0 24px; padding:0; display:grid; gap:10px; color:rgba(255,255,255,.78); }
+    .card__perks li { display:flex; gap:10px; line-height:1.5; }
+    .card__perks li::before { content:"*"; color:var(--accent); font-weight:700; }
+    .card__button { display:inline-flex; justify-content:center; align-items:center; width:100%; min-height:48px; border-radius:999px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.06); color:var(--text); cursor:pointer; font-weight:600; }
+    .card.tier-2 .card__button--primary { background:linear-gradient(135deg, var(--accent), var(--accent-strong)); color:var(--dark); border-color:transparent; }
+    .tools { margin:10px auto 70px; padding:28px; background:var(--panel); border:1px solid var(--line); border-radius:24px; box-shadow:var(--shadow); }
+    .tools h2 { font-size:2rem; margin-bottom:10px; }
+    .tools p { color:var(--muted); line-height:1.7; }
+    .tools__buttons { display:flex; gap:12px; flex-wrap:wrap; margin-top:20px; }
+    .tools__buttons button { padding:12px 16px; border-radius:14px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04); color:var(--text); cursor:pointer; }
+    .pinned { margin-top:18px; min-height:68px; padding:18px; border-radius:18px; border:2px dashed rgba(255,255,255,.14); color:rgba(255,255,255,.55); display:grid; place-items:center; text-align:center; }
+    .pinned.is-active { border-color:rgba(242,168,111,.42); color:var(--text); background:rgba(242,168,111,.06); }
+    @media (max-width:980px) { .cards-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="shell nav">
+    <a href="/index.html">Back to main site</a>
+  </div>
+
+  <section class="shell hero">
+    <p class="eyebrow">Support and Membership</p>
+    <h1>Choose the platform and tier that fits how you want to support the work.</h1>
+    <p>These membership cards make it easier to compare support tiers across the website, YouTube, Buy Me a Coffee, and TikTok. You can switch platforms, copy the text, or print the current layout for planning.</p>
+  </section>
+
+  <div class="shell">
+    <div class="tabs" id="tabs"></div>
+    <div class="cards-grid" id="cardsGrid"></div>
+  </div>
+
+  <section class="shell tools">
+    <h2>Export and compare</h2>
+    <p>Use these tools to copy the current platform card set, print the layout, or pin one tier for quick comparison while you review options.</p>
+    <div class="tools__buttons">
+      <button type="button" id="copyTextBtn">Copy as Text</button>
+      <button type="button" id="copyHtmlBtn">Copy HTML</button>
+      <button type="button" id="printBtn">Print / Save PDF</button>
+    </div>
+    <div class="pinned" id="pinnedCard">Click "Pin for comparison" on any card.</div>
+  </section>
+
+  <script>
+    const PLATFORMS = {
+      website: { label: 'Website', tiers: [
+        { tier: 1, name: 'Intentional Soul', tagline: 'Building the foundation of wholeness', price: '$25', period: '/month', perks: ['Access to digital meditation library', 'Community forum access', 'Monthly Wholeness newsletter', 'Exclusive posts and messages', 'Early community updates'], button: 'Join Now' },
+        { tier: 2, name: 'Partners With Purpose', tagline: 'Active growth and community skill-building', price: '$75', period: '/month', perks: ['All Intentional Soul benefits', 'Bi-weekly group healing circles', 'Workshop recordings', 'Members-only behind-the-scenes content', 'Priority crisis support'], button: 'Join Now', featured: true },
+        { tier: 3, name: 'Architect Of Abundance', tagline: 'Designing the future of the community', price: '$150', period: '/month', perks: ['All Partners With Purpose benefits', 'Monthly 1:1 coaching session', 'Free access to all digital courses', 'Personal wellness plan', 'Recognition on site or social, optional'], button: 'Join Now' }
+      ]},
+      buymeacoffee: { label: 'Buy Me a Coffee', tiers: [
+        { tier: 1, name: 'Intentional Soul', tagline: 'Building the foundation of wholeness', price: '$5', period: '/month', perks: ['Exclusive posts and messages', 'Early community news and updates', 'Monthly encouragement message', 'Wholeness newsletter'], button: 'Support Now' },
+        { tier: 2, name: 'Partners With Purpose', tagline: 'Active growth and community skill-building', price: '$15', period: '/month', perks: ['All Intentional Soul benefits', 'Behind-the-scenes content', 'Workshop snapshots', 'Cottage Food Program updates', 'Members-only tips and insights'], button: 'Support Now', featured: true },
+        { tier: 3, name: 'Architect Of Abundance', tagline: 'Designing the future of the community', price: '$50', period: '/month', perks: ['All Partners With Purpose benefits', 'Recognition on website or social, optional', 'Priority event invitations', 'Milestone celebrations', 'Innovation and pilot program access'], button: 'Support Now' }
+      ]},
+      youtube: { label: 'YouTube', tiers: [
+        { tier: 1, name: 'Intentional Soul', tagline: 'Building the foundation of wholeness', price: '$4.99', period: '/month', perks: ['Loyalty member badge', 'Custom community emoji', 'Members-only community posts', 'Early community news and updates'], button: 'Become a Member' },
+        { tier: 2, name: 'Partners With Purpose', tagline: 'Active growth and community skill-building', price: '$9.99', period: '/month', perks: ['All Intentional Soul benefits', 'Members-only videos', 'Early video drops', 'Q&A session access', 'Behind-the-scenes content'], button: 'Become a Member', featured: true },
+        { tier: 3, name: 'Architect Of Abundance', tagline: 'Designing the future of the community', price: '$24.99', period: '/month', perks: ['All Partners With Purpose benefits', 'Monthly member Q&A', 'First access to new programs', 'Credited in video descriptions', 'Priority event invitations'], button: 'Become a Member' }
+      ]},
+      tiktok: { label: 'TikTok', tiers: [
+        { tier: 1, name: 'Intentional Soul', tagline: 'Building the foundation of wholeness', price: 'LIVE Gifts', period: '', perks: ['Priority comment responses during live sessions', 'Exclusive live badge', 'Early community news and updates', 'Exclusive posts and messages'], button: 'Send Gifts' },
+        { tier: 2, name: 'Partners With Purpose', tagline: 'Active growth and community skill-building', price: 'LIVE Gifts', period: '', perks: ['All Intentional Soul benefits', 'Name recognition during live sessions', 'Exclusive series access', 'Behind-the-scenes content'], button: 'Send Gifts', featured: true },
+        { tier: 3, name: 'Architect Of Abundance', tagline: 'Designing the future of the community', price: 'LIVE Gifts', period: '', perks: ['All Partners With Purpose benefits', 'Shoutout during live sessions', 'Direct message access', 'Recognition on social, optional'], button: 'Send Gifts' }
+      ]}
+    };
+
+    let currentPlatform = 'website';
+    let pinned = null;
+    const tabs = document.getElementById('tabs');
+    const cardsGrid = document.getElementById('cardsGrid');
+    const pinnedCard = document.getElementById('pinnedCard');
+
+    function renderTabs() {
+      tabs.innerHTML = '';
+      Object.entries(PLATFORMS).forEach(([key, value]) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = `tab${key === currentPlatform ? ' is-active' : ''}`;
+        button.textContent = value.label;
+        button.addEventListener('click', () => { currentPlatform = key; renderTabs(); renderCards(); });
+        tabs.appendChild(button);
+      });
+    }
+
+    function renderCards() {
+      const data = PLATFORMS[currentPlatform];
+      cardsGrid.innerHTML = '';
+      data.tiers.forEach((tier) => {
+        const article = document.createElement('article');
+        article.className = `card tier-${tier.tier}`;
+        article.innerHTML = `
+          ${tier.featured ? '<div class="card__popular">Most Popular</div>' : ''}
+          <div class="card__platform">${data.label}</div>
+          <div class="card__badge">Tier ${tier.tier}</div>
+          <h2 class="card__name">${tier.name}</h2>
+          <p class="card__tagline">${tier.tagline}</p>
+          <div class="card__price"><span class="card__amount">${tier.price}</span><span class="card__period">${tier.period}</span></div>
+          <div class="card__divider"></div>
+          <ul class="card__perks">${tier.perks.map((perk) => `<li>${perk}</li>`).join('')}</ul>
+          <button class="card__button card__button--primary" type="button">${tier.button}</button>
+          <button class="card__button" type="button" data-pin="true" style="margin-top:10px;background:transparent;">Pin for comparison</button>
+        `;
+        article.querySelector('[data-pin="true"]').addEventListener('click', () => { pinned = { platform: data.label, tier }; renderPinned(); });
+        cardsGrid.appendChild(article);
+      });
+    }
+
+    function renderPinned() {
+      if (!pinned) {
+        pinnedCard.className = 'pinned';
+        pinnedCard.textContent = 'Click "Pin for comparison" on any card.';
+        return;
+      }
+      pinnedCard.className = 'pinned is-active';
+      pinnedCard.innerHTML = `<strong>${pinned.tier.name}</strong><span>${pinned.platform} · ${pinned.tier.price}${pinned.tier.period}</span>`;
+    }
+
+    function copyText() {
+      const data = PLATFORMS[currentPlatform];
+      let output = `SHRONDA JEANINE & COMPANY - ${data.label.toUpperCase()} MEMBERSHIP OPTIONS\n\n`;
+      data.tiers.forEach((tier) => {
+        output += `${tier.name} - ${tier.price}${tier.period}\n${tier.tagline}\n`;
+        tier.perks.forEach((perk) => { output += `* ${perk}\n`; });
+        output += '\n';
+      });
+      navigator.clipboard.writeText(output);
+    }
+
+    document.getElementById('copyTextBtn').addEventListener('click', copyText);
+    document.getElementById('copyHtmlBtn').addEventListener('click', () => navigator.clipboard.writeText(cardsGrid.outerHTML));
+    document.getElementById('printBtn').addEventListener('click', () => window.print());
+
+    renderTabs();
+    renderCards();
+    renderPinned();
+  </script>
+</body>
+</html>
