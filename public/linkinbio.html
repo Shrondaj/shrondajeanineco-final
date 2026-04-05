@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Shronda Jeanine — Link in Bio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --indigo: #0f0726;
+    --violet: #6b4fa0;
+    --violet-light: #9b7fd4;
+    --lavender: #c4b0e8;
+    --rose-gold: #d4967a;
+    --rose-light: #f0c4b0;
+    --cream: #fdf8f5;
+    --glass-bg: rgba(255,255,255,0.07);
+    --glass-border: rgba(196,176,232,0.22);
+    --text-bright: rgba(253,248,245,0.95);
+    --text-muted: rgba(196,176,232,0.6);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--indigo);
+    color: var(--text-bright);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px 80px;
+    overflow-x: hidden;
+  }
+  .bg-scene {
+    position: fixed; inset: 0; z-index: 0;
+    background:
+      radial-gradient(ellipse 130% 90% at 0% 10%, rgba(40,15,80,0.9) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 80% at 100% 80%, rgba(20,8,55,0.95) 0%, transparent 60%),
+      linear-gradient(160deg, #0f0726 0%, #1a1040 40%, #0c0930 100%);
+  }
+  .orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.15; z-index: 0; animation: drift 20s ease-in-out infinite; }
+  .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, #6b4fa0, transparent); top: -200px; left: -200px; }
+  .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, #d4967a, transparent); bottom: 0; right: -100px; animation-delay: -10s; }
+  @keyframes drift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+  body::after {
+    content: ''; position: fixed; inset: 0; z-index: 1; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .page { position: relative; z-index: 2; width: 100%; max-width: 480px; }
+
+  /* Profile */
+  .profile { text-align: center; margin-bottom: 40px; }
+  .avatar {
+    width: 110px; height: 110px; border-radius: 50%;
+    border: 2px solid rgba(212,150,122,0.5);
+    box-shadow: 0 0 0 6px rgba(212,150,122,0.1), 0 8px 40px rgba(0,0,0,0.5);
+    margin: 0 auto 18px;
+    overflow: hidden;
+    background: rgba(107,79,160,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cinzel', serif; font-size: 32px; color: var(--lavender);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .profile-name {
+    font-family: 'Cinzel', serif; font-size: 22px; font-weight: 500;
+    color: var(--cream); letter-spacing: 0.06em; margin-bottom: 6px;
+  }
+  .profile-handle {
+    font-size: 13px; color: var(--rose-gold); letter-spacing: 0.1em;
+    margin-bottom: 14px;
+  }
+  .profile-bio {
+    font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic;
+    font-weight: 300; color: var(--text-muted); line-height: 1.65;
+    max-width: 360px; margin: 0 auto 20px;
+  }
+  .profile-contact {
+    display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .profile-contact a {
+    font-size: 12px; color: var(--lavender); text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+    transition: color 0.3s;
+  }
+  .profile-contact a:hover { color: var(--rose-gold); }
+
+  /* Section label */
+  .section-label {
+    font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: var(--rose-gold); text-align: center; margin: 32px 0 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before, .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212,150,122,0.3), transparent);
+  }
+
+  /* Link cards */
+  .link-card {
+    display: flex; align-items: center; gap: 16px;
+    padding: 16px 22px; margin-bottom: 12px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(196,176,232,0.1);
+    text-decoration: none; color: var(--text-bright);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .link-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(107,79,160,0.1) 0%, transparent 60%);
+    border-radius: inherit; pointer-events: none;
+  }
+  .link-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(212,150,122,0.4);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(196,176,232,0.2);
+  }
+  .link-icon {
+    width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    background: linear-gradient(135deg, rgba(212,150,122,0.18), rgba(107,79,160,0.12));
+    border: 1px solid rgba(212,150,122,0.2);
+  }
+  .link-text strong { display: block; font-size: 15px; font-weight: 500; color: var(--cream); }
+  .link-text span { font-size: 12px; font-weight: 300; color: var(--text-muted); }
+  .link-arrow { margin-left: auto; color: var(--rose-gold); font-size: 18px; flex-shrink: 0; opacity: 0.7; }
+
+  /* Featured card */
+  .link-card.featured {
+    background: rgba(107,79,160,0.15);
+    border-color: rgba(212,150,122,0.35);
+  }
+
+  /* Crisis */
+  .crisis-card {
+    padding: 18px 22px; margin-top: 32px;
+    background: rgba(180,60,60,0.12);
+    border: 1px solid rgba(220,100,100,0.3);
+    border-radius: 16px;
+    text-align: center;
+  }
+  .crisis-card h4 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #e88080; margin-bottom: 10px; }
+  .crisis-card p { font-size: 13px; color: rgba(253,220,220,0.8); line-height: 1.8; font-weight: 300; }
+  .crisis-card a { color: #f0b0b0; text-decoration: none; font-weight: 400; }
+  .crisis-card a:hover { color: #fff; }
+
+  .footer-back {
+    text-align: center; margin-top: 40px; font-size: 12px;
+    color: var(--text-muted); letter-spacing: 0.1em;
+  }
+  .footer-back a { color: var(--lavender); text-decoration: none; }
+  .footer-back a:hover { color: var(--rose-gold); }
+
+  .copyright {
+    text-align: center; margin-top: 24px; font-size: 11px;
+    color: rgba(196,176,232,0.25); font-weight: 300;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-scene"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+
+<div class="page">
+
+  <!-- Profile -->
+  <div class="profile">
+    <div class="avatar">
+      <!-- Replace with your photo: <img src="path/to/your-photo.jpg" alt="Shronda Jeanine"> -->
+      SJ
+    </div>
+    <div class="profile-name">Shronda Jeanine</div>
+    <div class="profile-handle">@shrondajeanine</div>
+    <p class="profile-bio">
+      Turning life's hardest truths into wisdom that heals. Healing conversations · Spiritual growth · The Collective
+    </p>
+    <div class="profile-contact">
+      <a href="tel:6027590158">📞 (602) 759-0158</a>
+      <a href="/cdn-cgi/l/email-protection#106378627f7e74717a75717e797e75506378627f7e74717a75717e797e75737f3e737f7d">✉ Email Me</a>
+    </div>
+  </div>
+
+  <!-- Main Site -->
+  <div class="section-label">My Website</div>
+  <a href="index.html" class="link-card featured">
+    <div class="link-icon">🌿</div>
+    <div class="link-text">
+      <strong>ShrondaJeanineCo.com</strong>
+      <span>Healing · Courses · Book a Session</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <!-- Book a Session -->
+  <a href="index.html#booking" class="link-card">
+    <div class="link-icon">📅</div>
+    <div class="link-text">
+      <strong>Book a Free Consultation</strong>
+      <span>30 minutes · No pressure · Real talk</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <!-- Social Media -->
+  <div class="section-label">Find Me On Social</div>
+
+  <a href="https://www.youtube.com/@OnPurposeWithPurpose9" target="_blank" class="link-card">
+    <div class="link-icon">▶️</div>
+    <div class="link-text">
+      <strong>YouTube — The Collective</strong>
+      <span>Healing conversations &amp; teachings</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <a href="https://instagram.com/shrondajeanine" target="_blank" class="link-card">
+    <div class="link-icon">📸</div>
+    <div class="link-text">
+      <strong>Instagram</strong>
+      <span>@shrondajeanine · Daily wisdom &amp; stories</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <a href="https://www.tiktok.com/@.shronda" target="_blank" class="link-card">
+    <div class="link-icon">🎵</div>
+    <div class="link-text">
+      <strong>TikTok</strong>
+      <span>@shrondajeanine · Short-form healing content</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <a href="https://facebook.com/shrondajeanine" target="_blank" class="link-card">
+    <div class="link-icon">💙</div>
+    <div class="link-text">
+      <strong>Facebook</strong>
+      <span>Community updates &amp; live sessions</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <a href="https://x.com/shrjeacompany" target="_blank" class="link-card">
+    <div class="link-icon">𝕏</div>
+    <div class="link-text">
+      <strong>X / Twitter</strong>
+      <span>Thoughts on healing &amp; emotional intelligence</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <!-- Courses & Community -->
+  <div class="section-label">Grow With Me</div>
+
+  <a href="index.html#courses" class="link-card featured">
+    <div class="link-icon">🎓</div>
+    <div class="link-text">
+      <strong>Courses &amp; Programs</strong>
+      <span>Healing Your Story · Spiritual Motherhood · Breaking Cycles</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <a href="index.html#community" class="link-card">
+    <div class="link-icon">🤝</div>
+    <div class="link-text">
+      <strong>Join The Collective</strong>
+      <span>Free community for healing &amp; growth</span>
+    </div>
+    <div class="link-arrow">→</div>
+  </a>
+
+  <!-- Crisis Support -->
+  <div class="crisis-card">
+    <h4>⚠ Crisis Support Available 24/7</h4>
+    <p>
+      Call or Text <a href="tel:988"><strong>988</strong></a> (Suicide &amp; Crisis Lifeline)<br>
+      Text <strong>HOME</strong> to <a href="sms:741741"><strong>741741</strong></a> (Crisis Text Line)<br>
+      Domestic Violence: <a href="tel:18007997233"><strong>1-800-799-7233</strong></a><br>
+      RAINN Sexual Assault: <a href="tel:18006564673"><strong>1-800-656-4673</strong></a>
+    </p>
+  </div>
+
+  <div class="footer-back">
+    <a href="index.html">← Back to Full Website</a>
+  </div>
+
+  <p class="copyright
